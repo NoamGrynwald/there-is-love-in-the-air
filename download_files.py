@@ -2,7 +2,7 @@ from datasets import load_dataset, Audio
 import pandas as pd
 import os
 
-N_SAMPLES = 50
+N_SAMPLES = 20
 AUDIO_DIR = "audio_files"
 COLUMNS = ["sample_id", "latitude", "longitude", "audio_caption", "tags", "address", "audio"]
 
@@ -38,5 +38,6 @@ def get_data(number_of_samples: int) -> pd.DataFrame:
 
 
 if __name__ == "__main__":
-    df = get_data(N_SAMPLES)
-    print(df.head())
+    pass
+    # df = get_data(N_SAMPLES)
+    # print(df.head())
