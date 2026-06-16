@@ -22,15 +22,12 @@ if __name__ == "__main__":
     # Display the DataFrame with the new classification results
     print(df[['sample_id', 'audio_caption', 'tags', 'audio_object_classification']])
 
-    row = df.iloc[3]
-
-    classification = row[
-        'audio_object_classification'
-    ]
-
-    agm.generate_audio_location_map(
-        classification_str=classification,
-        center_lat=row["latitude"],
-        center_lon=row["longitude"],
-        radius_meters=1000
+    agm.generate_maps_for_dataframe(
+        df=df,
+        classification_col="audio_object_classification",
+        sample_id_col="sample_id",
+        center_lat=32.07242,
+        center_lon=34.78305,
+        radius_meters=10000,
+        output_dir="maps",  # <── folder created automatically
     )
